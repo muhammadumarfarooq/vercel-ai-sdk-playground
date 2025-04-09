@@ -1,5 +1,5 @@
-import { Separator } from "./separator";
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/lib/utils";
+import { Separator } from "./ui/separator";
 
 function TextSeparator({
   children,

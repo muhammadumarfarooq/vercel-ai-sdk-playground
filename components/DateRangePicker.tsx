@@ -3,15 +3,12 @@
 import * as React from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-import { Button } from "@craveup/ui/components/button";
-import { Calendar } from "@craveup/ui/components/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@craveup/ui/components/popover";
-import { Label } from "@craveup/ui/components/label";
+import { Button } from "./ui/button";
+
 import { cn } from "../lib/utils";
+import { Label } from "./ui/label";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Calendar } from "./ui/calendar";
 
 export type DateRange = {
   from: Date | undefined;
@@ -38,7 +35,7 @@ export function DateRangePicker({
             variant={"outline"}
             className={cn(
               "w-full justify-start text-left font-normal",
-              !dateRange && "text-muted-foreground",
+              !dateRange && "text-muted-foreground"
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />

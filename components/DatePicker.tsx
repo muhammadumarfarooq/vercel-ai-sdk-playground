@@ -3,14 +3,11 @@
 import * as React from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-import { Button } from "@craveup/ui/components/button";
-import { Calendar } from "@craveup/ui/components/calendar";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@craveup/ui/components/popover";
+
 import { cn } from "../lib/utils";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Button } from "./ui/button";
+import { Calendar } from "./ui/calendar";
 
 export function DatePicker({
   date,
@@ -26,7 +23,7 @@ export function DatePicker({
           variant={"outline"}
           className={cn(
             "w-[240px] justify-start text-left font-normal",
-            !date && "text-muted-foreground",
+            !date && "text-muted-foreground"
           )}
         >
           <CalendarIcon />

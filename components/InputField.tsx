@@ -1,7 +1,7 @@
-import { Input } from "@craveup/ui/components/input";
-import { Label } from "@craveup/ui/components/label";
 import React, { forwardRef } from "react";
 import { cn } from "../lib/utils";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
 
 // Define the props for InputField including ref forwarding
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -26,7 +26,7 @@ const InputField = forwardRef<HTMLInputElement, InputProps>(
           <p
             className={cn(
               "mt-2 text-xs",
-              hasError ? "text-red-600" : "text-gray-500",
+              hasError ? "text-red-600" : "text-gray-500"
             )}
           >
             {helperText}
@@ -34,7 +34,7 @@ const InputField = forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 // Set the display name for debugging purposes

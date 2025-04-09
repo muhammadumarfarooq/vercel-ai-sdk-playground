@@ -1,22 +1,14 @@
 import * as React from "react";
 import { Check, X, ChevronsUpDown, Loader } from "lucide-react";
-import { Button } from "@craveup/ui/components/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandInput,
-  CommandItem,
-} from "@craveup/ui/components/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@craveup/ui/components/popover";
-import { Badge } from "@craveup/ui/components/badge";
+
 import { CommandList } from "cmdk";
-import { LoadingSpinner } from "@craveup/ui/components/LoadingSpinner";
-import { Label } from "@craveup/ui/components/label";
 import { cn } from "../lib/utils";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Label } from "./ui/label";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+import { Command, CommandEmpty, CommandInput, CommandItem } from "./ui/command";
+import { LoadingSpinner } from "./LoadingSpinner";
 
 export type OptionType = {
   label: string;
@@ -48,7 +40,7 @@ function MultiSelect({
   };
 
   const selectedOptions = options.filter((option) =>
-    selected.includes(option.value),
+    selected.includes(option.value)
   );
 
   return (
@@ -62,7 +54,9 @@ function MultiSelect({
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className={`mt-2.5 w-full justify-between ${selected.length > 1 ? "h-full" : "h-10"}`}
+            className={`mt-2.5 w-full justify-between ${
+              selected.length > 1 ? "h-full" : "h-10"
+            }`}
             onClick={() => setOpen(!open)}
           >
             <div className="flex flex-wrap gap-1">
@@ -117,7 +111,7 @@ function MultiSelect({
                   onChange(
                     selected.includes(option.value)
                       ? selected.filter((item) => item !== option.value)
-                      : [...selected, option.value],
+                      : [...selected, option.value]
                   );
                   setOpen(true);
                 }}
@@ -127,7 +121,7 @@ function MultiSelect({
                     "mr-2 h-4 w-4",
                     selected.includes(option.value)
                       ? "opacity-100"
-                      : "opacity-0",
+                      : "opacity-0"
                   )}
                 />
                 {option.label}
