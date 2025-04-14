@@ -9,6 +9,7 @@ import {
 } from "./AddDashboardItemDialog";
 import DashboardPageWrapper from "@/components/DashboardPageWrapper";
 import { DataTable } from "@/components/data-table";
+import AddressAutoComplete from "@/components/AddressAutoComplete";
 
 export default function DashboardPage() {
   const [items, setItems] = useState<DashboardItem[]>([]);
@@ -39,6 +40,9 @@ export default function DashboardPage() {
           columns={DashboardColumns}
           // onRowClick={...}
         />
+      </div>
+      <div>
+        <AddressAutoComplete />
       </div>
     </DashboardPageWrapper>
   );
