@@ -9,7 +9,7 @@ import {
 } from "./AddDashboardItemDialog";
 import DashboardPageWrapper from "@/components/DashboardPageWrapper";
 import { DataTable } from "@/components/data-table";
-import AddressAutoComplete from "@/components/AddressAutoComplete";
+import AddressAutoComplete from "@/components/AddressAutoComplete/AddressAutoComplete";
 
 export default function DashboardPage() {
   const [items, setItems] = useState<DashboardItem[]>([]);

@@ -27,6 +27,7 @@
     "@radix-ui/react-switch": "^1.1.4",
     "@radix-ui/react-tabs": "^1.1.4",
     "@radix-ui/react-tooltip": "^1.2.0",
+    "@react-google-maps/api": "^2.20.6",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
     "@tanstack/react-table": "^8.21.2",
