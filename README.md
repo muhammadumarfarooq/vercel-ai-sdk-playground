@@ -11,11 +11,7 @@ A modern starter template using **Next.js 15 App Router**, **Shadcn UI**, **Tail
 - ✅ Shadcn UI (Radix + Tailwind)
 - ✅ TypeScript
 - ✅ Supabase integration (auth-ready)
-- ✅ Custom reusable components:
-  - `LoadingButton`
-  - `CircularLoader`
-  - `DateRangePicker`
-  - `TextSeparator`
+- ✅ Google Maps Places Autocomplete (address form)
 - ✅ Pre-configured ESLint & Prettier
 - ✅ Mobile-first, accessible components
 - ✅ Dark mode ready
@@ -35,22 +31,25 @@ pnpm dev         # start the local dev server
 
 ## ⚙️ Environment Setup
 
-This project uses Supabase for authentication (and can be extended for database + storage).
+This project uses Supabase for authentication (and is extendable for database + storage). It also integrates Google Maps for address autocomplete.
 
-To configure your environment, copy the example file and update your own values:
+To configure your environment:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Then update `.env.local` with your Supabase credentials:
+Then update `.env.local`:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 ```
 
-You can find these in your Supabase project's **Settings → API** tab.
+You can get these values from:
+- **Supabase** → Project Settings → API
+- **Google Cloud Console** → Credentials
 
 ---
 
@@ -64,8 +63,9 @@ These extend Shadcn base components with consistent styling and utility.
 - `CircularLoader` – Minimal spinner for async content
 - `DateRangePicker` – Range picker with calendar + popover
 - `TextSeparator` – Divider with optional label
+- `AddressAutoComplete` – Full address form with Google Maps Autocomplete, Zod validation, and lat/lng extraction
 
-> More reusable components will be added soon!
+> Each component is fully typed and designed to be reusable.
 
 ---
 
@@ -80,12 +80,14 @@ These extend Shadcn base components with consistent styling and utility.
 
 ```
 .
-├── components/         # UI components (Shadcn + custom)
-├── app/                # Next.js 15 App Router structure
-├── lib/                # Utility functions (e.g., Supabase client)
-├── styles/             # Tailwind and global styles
-├── public/             # Static assets
-├── .env.example        # Environment variable template
+├── components/
+│   ├── AddressAutoComplete/      # Address form + autocomplete logic
+│   └── ui/                       # Reusable UI components
+├── lib/                          # Utility functions (e.g., Supabase client)
+├── app/                          # Next.js 15 App Router pages/layouts
+├── styles/                       # Tailwind and global styles
+├── public/                       # Static assets
+├── .env.example                  # Environment variable template
 └── ...
 ```
 
